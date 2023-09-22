@@ -1,0 +1,24 @@
+for deleting a namespace. 
+kubectl delete namespace kuma-demo 
+
+To get the pod from online which not there in location machine use this command, demo-app-c7cd6588b-d7jsr is the pod name
+kubectl get pod -n kuma-demo demo-app-c7cd6588b-d7jsr -o yaml
+
+-n is the namespace.
+to port-forward the service(svc):
+kubectl port-forward svc/notes-app-deployment -n nodejs-demo 80:80
+
+to deploy a file use this file:
+kubectl apply -f mockbin-setup.yaml
+
+
+to install control plane using kumactl:
+kumactl install control-plane | kubectl apply -f -
+
+
+to get pods of particular namespace
+kubectl get pods -n  kuma-demo
+
+get all namepsaces:
+kubectl get ns
+
