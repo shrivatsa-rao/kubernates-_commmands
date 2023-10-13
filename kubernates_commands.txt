@@ -22,3 +22,12 @@ kubectl get pods -n  kuma-demo
 get all namepsaces:
 kubectl get ns
 
+here we can edit the file once you should know the service name and namespace name
+kubectl edit svc kong-mesh-control-plane -n kong-mesh-system
+
+once you have edited the file  you need to run the fike again by using command
+kubectl apply -f- service.yaml
+
+to download the file from the particular namespace into your local machine you can use this command
+kubectl get service kong-mesh-control-plane -n kong-mesh-system -o yaml > service.yaml 
+
